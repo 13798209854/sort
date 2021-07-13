@@ -19,6 +19,24 @@ void insert_sort(int a[], int size)
 	}
 }
 
+void bubble_sort(int a[], int size)
+{
+	if (size < 2) return;
+	for (int i = 0; i < size - 1; ++i)
+	{
+		for(int j = 0; j < size - i - 1; ++j)
+		{
+			if (a[j] > a[j + 1])
+			{
+				auto t = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = t;
+				
+			}
+		}
+	}
+}
+
 template<typename T>
 void printArray(T a[], int size)
 {
@@ -35,7 +53,7 @@ int main()
 	int b = 0;
 	b = sizeof(a)/sizeof(int);
 	printArray<int>(a, b);
-	insert_sort(a, b);
+	bubble_sort(a, b);
 	printArray<int>(a, b);
 }
 
